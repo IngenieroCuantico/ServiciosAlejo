@@ -6,15 +6,13 @@ function pdo_connect_mysql() {
     $DATABASE_PASS = 'Zeus9119*';
     $DATABASE_NAME = 'ServiciosAlejandro';
 	
-
-
 	try {
     	return new PDO('mysql:host=' . $DATABASE_HOST . 
 						';dbname=' . $DATABASE_NAME . 
 						';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
 
     } catch (PDOException $exception) {
-    	// If there is an error with the connection, stop the script and display the error.
+    	// si la conexion no es establecida muestra el mensaje de error
     	exit('Conexion No Conectada');
     }
 }
@@ -40,9 +38,6 @@ echo <<<EOT
 			<a href=""><i class="fas fa-solid fa-yin-yang"> </i>Ingeniero Alejandro</a>
     	</div>
     </nav>
-
-
-
 
 EOT;
 }

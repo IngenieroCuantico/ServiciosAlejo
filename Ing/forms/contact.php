@@ -10,14 +10,18 @@
   $receiving_email_address = 'contact@example.com';
 
   if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
+
     include( $php_email_form );
+
   } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
+
+    die( '_Inhabilitado para cargar las librerias php email form!');
+
   }
+
 
   $contact = new $php_email_form;
   $contact -> ajax = true;
-  
   $contact -> to = $receiving_email_address;
   $contact -> from_name = $_POST['name'];
   $contact -> from_email = $_POST['email'];
